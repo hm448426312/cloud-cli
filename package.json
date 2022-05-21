@@ -1,6 +1,6 @@
 {
   "name": "my-project",
-  "description": "CIG-ÔÆ·þÎñ²úÆ·ÏßÇ°¶Ë»ù´¡´úÂë",
+  "description": "CIG-ï¿½Æ·ï¿½ï¿½ï¿½ï¿½Æ·ï¿½ï¿½Ç°ï¿½Ë»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "axios": "~0.21.0",
-    "common-lib": "0.0.1",
+    "common-lib": "^2.0.1",
     "common-ui": "0.0.1",
     "core-js": "^3.8.3",
     "element-ui": "^2.15.4",
