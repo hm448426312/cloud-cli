@@ -9,7 +9,6 @@ let langExp = /\.\/([^./]+)\.([^.]+)$/;
 let messages = {};
 langFiles.keys().forEach(key => {
   let prop = langExp.exec(key)[1]; //正则匹配en|zh这样的值
-  //messages[prop]相当于 messages['en'] = {table:{...}}
   messages[prop] = langFiles(key).default
 });
 Vue.use(VueI18n);

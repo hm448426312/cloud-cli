@@ -1,11 +1,13 @@
 <template>
-  <div>
+  <layout-content class="page-demo">
+    <div class="left-card" slot="left">我是左侧内容，字体颜色使用了common-ui的变量</div>
+    <h1>国际化、请求示例</h1>
     <el-button
       style="margin-left: auto"
       @click="changeLanguageEvent"
     >切换语言(tooltip显示为dom变量中使用国际化语言)
     </el-button>
-    <p class="g-text-desc">当前服务语言为（DOM中花括号中使用国际化语言）：{{$i18n.t('language')}}</p>
+    <p class="g-text-desc">当前服务语言为（DOM中花括号中使用国际化语言）：{{$t('language')}}</p>
     <el-button @click="showServiceLanguage">弹框显示本服务语言</el-button>
     <br>
     <el-button
@@ -17,7 +19,7 @@
       @click="abnormalGetJson"
     >异常请求本地json
     </el-button>
-  </div>
+  </layout-content>
 </template>
 
 <script>
@@ -25,16 +27,11 @@
 
   export default {
     name: "Demo",
-    data() {
-      return {}
-    },
-    mounted() {
-    },
     methods: {
       showServiceLanguage() {
         this.$message({
           type: "info",
-          message: `JS中使用：${this.$i18n.t("language")}`
+          message: `JS中使用：${this.$t("language")}`
         })
       },
       abnormalGetJson() {
@@ -68,5 +65,12 @@
 </script>
 
 <style lang="scss" scoped>
+  @import "~common-ui/src/assets/css/variable";
 
+  .page-demo {
+    .left-card {
+      width: 250px;
+      color: $text-lev3;
+    }
+  }
 </style>
