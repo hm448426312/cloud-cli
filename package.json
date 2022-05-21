@@ -1,5 +1,6 @@
 {
   "name": "my-project",
+  "description": "CIG-云服务产品线前端基础代码",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -8,8 +9,9 @@
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
-    "amp-common-ui": "^1.0.130",
     "axios": "~0.21.0",
+    "common-lib": "0.0.1",
+    "common-ui": "0.0.1",
     "core-js": "^3.8.3",
     "element-ui": "^2.15.4",
     "vue": "^2.6.14",
