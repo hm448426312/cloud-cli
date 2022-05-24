@@ -2,23 +2,26 @@
   <layout-content class="page-demo">
     <div class="left-card" slot="left">我是左侧内容，字体颜色使用了common-ui的变量</div>
     <h1>国际化、请求示例</h1>
-    <el-button
+    <cl-button
       style="margin-left: auto"
       @click="changeLanguageEvent"
     >切换语言(tooltip显示为dom变量中使用国际化语言)
-    </el-button>
+    </cl-button>
     <p class="g-text-desc">当前服务语言为（DOM中花括号中使用国际化语言）：{{$t('language')}}</p>
-    <el-button @click="showServiceLanguage">弹框显示本服务语言</el-button>
+    <cl-button @click="showServiceLanguage">弹框显示本服务语言</cl-button>
     <br>
-    <el-button
+    <cl-button
       @click="normalGetJson"
     >正常请求本地json
-    </el-button>
+    </cl-button>
     <br>
-    <el-button
+    <cl-button
       @click="abnormalGetJson"
     >异常请求本地json
-    </el-button>
+    </cl-button>
+    <cl-tooltip content="tooltip">
+      <cl-button>cl-tooltip</cl-button>
+    </cl-tooltip>
   </layout-content>
 </template>
 
