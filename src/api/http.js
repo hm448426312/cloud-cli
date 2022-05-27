@@ -1,5 +1,5 @@
 import axios from 'axios';
-import httpIntercept from "common-lib/src/utils/http-intercept";
+import httpIntercept from "cloud-lib/src/utils/http-intercept";
 
 let http = axios.create({
   timeout: 10000,

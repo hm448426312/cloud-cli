@@ -1,28 +1,37 @@
 <template>
-  <layout-content class="page-demo">
+  <div class="page-demo">
     <div class="left-card" slot="left">我是左侧内容，字体颜色使用了common-ui的变量</div>
-    <h1>国际化、请求示例</h1>
-    <cl-button
-      style="margin-left: auto"
-      @click="changeLanguageEvent"
-    >切换语言(tooltip显示为dom变量中使用国际化语言)
-    </cl-button>
-    <p class="g-text-desc">当前服务语言为（DOM中花括号中使用国际化语言）：{{$t('language')}}</p>
-    <cl-button @click="showServiceLanguage">弹框显示本服务语言</cl-button>
-    <br>
-    <cl-button
-      @click="normalGetJson"
-    >正常请求本地json
-    </cl-button>
-    <br>
-    <cl-button
-      @click="abnormalGetJson"
-    >异常请求本地json
-    </cl-button>
-    <cl-tooltip content="tooltip">
-      <cl-button>cl-tooltip</cl-button>
-    </cl-tooltip>
-  </layout-content>
+    <div>
+      <h1>国际化、请求示例</h1>
+      <cl-button
+        style="margin-left: auto"
+        @click="changeLanguageEvent"
+      >切换语言(tooltip显示为dom变量中使用国际化语言)
+      </cl-button>
+      <p class="cl-text-desc">当前服务语言为（DOM中花括号中使用国际化语言）：{{$t('language')}}</p>
+      <cl-button @click="showServiceLanguage">弹框显示本服务语言</cl-button>
+      <br>
+      <cl-button
+        @click="normalGetJson"
+      >正常请求本地json
+      </cl-button>
+      <br>
+      <cl-button
+        @click="abnormalGetJson"
+      >异常请求本地json
+      </cl-button>
+      <div>
+        <cl-tooltip content="tooltip">
+          <cl-button>cl-tooltip</cl-button>
+        </cl-tooltip>
+      </div>
+    </div>
+    <cl-form v-model="testForm">
+      <cl-form-item required label="名称" prop="name">
+        <cl-input v-model="testForm.name"></cl-input>
+      </cl-form-item>
+    </cl-form>
+  </div>
 </template>
 
 <script>
@@ -30,6 +39,13 @@
 
   export default {
     name: "Demo",
+    data() {
+      return {
+        testForm: {
+          name: ""
+        },
+      }
+    },
     methods: {
       showServiceLanguage() {
         this.$message({
@@ -68,12 +84,4 @@
 </script>
 
 <style lang="scss" scoped>
-  @import "~common-ui/src/assets/css/variable";
-
-  .page-demo {
-    .left-card {
-      width: 250px;
-      color: $text-lev3;
-    }
-  }
 </style>
