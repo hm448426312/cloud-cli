@@ -1,6 +1,17 @@
 <template>
-  <div class="page-demo">
-    <div class="left-card" slot="left">我是左侧内容，字体颜色使用了common-ui的变量</div>
+  <cl-layout-content class="page-demo">
+    <cl-content-title
+      :show-back="true"
+      @back="handleBack"
+      slot="title"
+    >标题
+      <template slot="right">
+        <cl-button type="primary">主要按钮</cl-button>
+      </template>
+    </cl-content-title>
+    <div slot="title-after">
+      标题之下的内容
+    </div>
     <div>
       <h1>国际化、请求示例</h1>
       <cl-button
@@ -31,7 +42,7 @@
         <cl-input v-model="testForm.name"></cl-input>
       </cl-form-item>
     </cl-form>
-  </div>
+  </cl-layout-content>
 </template>
 
 <script>
@@ -47,6 +58,12 @@
       }
     },
     methods: {
+      handleBack() {
+        this.$message({
+          type: "success",
+          message: "点击返回按钮"
+        })
+      },
       showServiceLanguage() {
         this.$message({
           type: "info",
