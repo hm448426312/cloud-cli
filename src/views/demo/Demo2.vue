@@ -42,6 +42,9 @@
         <cl-input v-model="testForm.name"></cl-input>
       </cl-form-item>
     </cl-form>
+    <div slot="footer">
+      <cl-button>按钮</cl-button>
+    </div>
   </cl-layout-content>
 </template>
 
