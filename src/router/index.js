@@ -1,14 +1,39 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Demo from "../views/demo/Demo";
+import Demo2 from "@/views/demo/Demo2";
+import Home from "@/views/demo/index"
 
 Vue.use(VueRouter);
-
+// 获取原型对象上的push函数
+const originalPush = VueRouter.prototype.push;
+// 修改原型对象中的push方法
+VueRouter.prototype.push = function push(location) {
+  return originalPush.call(this, location).catch(err => err)
+};
 const routes = [
   {
     path: '/',
-    name: 'demo',
-    component: Demo
+    component: Home,
+    children: [
+      {
+        path: 'demo1',
+        name: 'demo',
+        component: Demo
+      },
+      {
+        path: 'demo2',
+        name: 'demo2',
+        component: Demo2,
+        meta: {
+          hideLeft: true
+        }
+      }
+    ]
+  },
+  {
+    path: '',
+    redirect: 'demo1'
   }
 ];
 
