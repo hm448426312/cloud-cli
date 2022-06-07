@@ -3,6 +3,7 @@
     <div slot="header" style="margin: 0 auto; display: flex;flex-direction: row;align-items: center">
       <cl-link @click="goRoute('demo1')">Demo1</cl-link>
       <cl-link @click="goRoute('demo2')">Demo2</cl-link>
+      <cl-link @click="goRoute('demo3')">Demo3</cl-link>
     </div>
     <div v-if="!hideLeft" class="left-menu" :class="{'is-fold': foldFlag}" slot="left">
       <div style="display: flex; flex-direction: row">

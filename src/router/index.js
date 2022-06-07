@@ -3,6 +3,7 @@ import VueRouter from 'vue-router'
 import Demo from "../views/demo/Demo";
 import Demo2 from "@/views/demo/Demo2";
 import Home from "@/views/demo/index"
+import Demo3 from "@/views/demo/Demo3";
 
 Vue.use(VueRouter);
 // 获取原型对象上的push函数
@@ -28,6 +29,11 @@ const routes = [
         meta: {
           hideLeft: true
         }
+      },
+      {
+        path: 'demo3',
+        name: 'demo3',
+        component: Demo3
       }
     ]
   },

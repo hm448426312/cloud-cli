@@ -7,12 +7,10 @@ import "cloud-ui/lib/theme-chalk/index.css";
 // import '../src/assets/css/style.scss';
 import i18n from "./i18n/index";
 
-// 引入element-ui的资源文件
-// const language = localStorage.getItem("language") || "zh-CN";
-const language = "zh-CN";
+// 引入cloud-ui的资源文件
+const language = localStorage.getItem("language") || "zh-CN";
 let local = require(`cloud-ui/lib/locale/lang/${language}`).default;
 Vue.use(CloudUI, {size: 'small', local: local});
-// Vue.use(CommonUI);
 Vue.config.productionTip = false;
 
 new Vue({
